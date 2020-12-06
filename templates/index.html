@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+	textarea{ 
+	  width: auto; 
+	  min-width:auto; 
+	  max-width:auto; 
+
+	  height:150px; 
+	  min-height:150px;  
+	  max-height:150px;
+	}
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Reverse Julius - A Caesar Cipher Decryption Tool</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/modern-business.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Reverse Julius</a>
+    </div>
+  </nav>
+	<!-- Script -->
+	<script>
+		function eraseText() {
+		document.getElementById("inputMsg").value = "";
+		}
+	</script>
+
+  <!-- Page Content -->
+  <div class="container">
+
+	<br>
+	
+    <!-- Features Section -->
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="my-4">Caesar Cipher Decryption Tool</h2>
+		<hr>
+		<form action="/decrypt" method="POST">
+			<div class="form-group">
+				<label for="inputMsg"><b>Input Message</b>:</label>
+				<textarea name= "inputMsg" class="form-control" id="inputMsg" rows="3">{{strMsg}}</textarea>
+			</div>
+			<label for="lang">Choose Language:</label>
+			<select style= "width:auto;display: inline-block" class="form-control" id="lang" name="lang">
+			  <option value="en_us">English</option>
+			  <option value="tl_ph">Filipino</option>
+			</select>
+			<button type="button" class="btn btn-danger" style="float: right;display: inline-block" onclick="javascript:eraseText();">Clear</button>
+			<button type="submit" class="btn btn-success" style="float: right; margin-right:5px;display: inline-block">Decrypt</button>
+		</form>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+      <div class="col-lg-6">
+			<div class="form-group">
+				<p style="margin-top:0px;margin-bottom:0px"><b>Key</b>: {{key}}</p>
+				<p style="margin-top:0px"><b>Reference Word</b>: <u>{{ refWord }}</u></p>
+				<label for="inputMsg"><b>Output Message</b>:</label>
+				<textarea  style="margin-bottom:0px"class="form-control" id="outMsg" rows="3">{{outMsg}}</textarea>
+			</div>
+				<button style="float: right; margin-right:5px" class="btn btn-primary" onclick="MyWindow=window.open('/solnspace','MyWindow','width=auto,height=auto'); return false;">View Solution Space</button>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; 2020 prothej227 | Reverse Julius </p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>

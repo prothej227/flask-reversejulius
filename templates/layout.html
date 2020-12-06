@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>ReverseJulius_v1.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #dddddd;
+		}
+	</style>
+</head>
+<br>
+<center><h1 style="margin-bottom:0px">Reverse Julius v1.0</h1></center>
+<center><small "style="margin-top:0px" >A Flask-Python Tool used to decipher Caesar-encrypted Messages</small></center>
+<br>
+<hr>
+<center><h2 style="margin-bottom:4px;margin-top:0px">Solution Space</h2></center>
+<b>Input Message</b>: {{ strMsg }}
+<br>
+<br>
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Message</th>
+  </tr>
+
+{% for i in range(25) %}
+	<tr>
+    <td>{{ i+1 }} </td>
+ 	<td>{{ soln[i+1] }}</td>
+	</tr>
+{% endfor %}
+	<tr>
+    <td>26</td>
+ 	<td>{{ strMsg }}</td>
+	</tr>
+</table>	
+<hr>
+<center>Reverse Julius | Journel Cabrillos (c) 2020</center>
+</html>
