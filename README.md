@@ -10,18 +10,18 @@ Python-based Caesar Cipher Decryption Tool
 
 ### Installation
 1. Install Python & Python PIP
-2. Install dependencies
+2. Install the required dependencies
 ```sh
 $ pip install flask
 ```
 3. Run the program
-  - For WebGUI / Flask
+  - For WebGUI / Flask:
     ```sh
     $ python app.py
     ```
     Go to: localhost:5000 or 127.0.0.1:5000
     
-  - For CLI
+  - For CLI:
     ```sh
     $ python appCLI.py
     ```
