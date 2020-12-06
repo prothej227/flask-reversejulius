@@ -29,7 +29,7 @@ $ pip install flask
  ### License
   - MIT License
   
-  ### Author
-    - Journel Cabrillos
+ ### Author
+  - Journel Cabrillos
 
   
