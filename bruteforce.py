@@ -18,6 +18,7 @@ def findMaximum(word, pos):
     return (li[l])
 
 def StripNumeric(strInput):
+    strInput = ''.join([i for i in strInput.splitlines()])
     return ''.join([i for i in strInput if not i.isdigit()])
 
 def WordHopping(strInput):
@@ -65,6 +66,6 @@ def Bruteforce(solnSpace, brute_dict):
         else:
             key = key + 1
             
-    #Enforce Forced Hopping
+    #If no key found in Reference Word Method, Resort to Word Hopping
     SR_LIST = ShiftBrute(solnSpace, dictionary)
     return SR_LIST.index(max(SR_LIST)), (str("Forced Word Hopping"))

@@ -33,7 +33,7 @@
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="/">Reverse Julius</a>
+      <a class="navbar-brand" href="/"><img src="/static/favicon/caesar-cipher.png" style="width:28px;height:28px;"> ReverseJulius</a>
     </div>
   </nav>
 	<!-- Script -->
@@ -49,19 +49,19 @@
 	<br>
 	
     <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="row justify-content-start">
+      <div style="margin-left:25px;"class="col-lg-12">
         <h2 class="my-4">Caesar Cipher Decryption Tool</h2>
 		<hr>
-		<form action="/decrypt" method="POST">
+		<form action="/" method="POST">
 			<div class="form-group">
 				<label for="inputMsg"><b>Input Message</b>:</label>
 				<textarea name= "inputMsg" class="form-control" id="inputMsg" rows="3">{{strMsg}}</textarea>
 			</div>
 			<label for="lang">Choose Language:</label>
 			<select style= "width:auto;display: inline-block" class="form-control" id="lang" name="lang">
-			  <option value="en_us">English</option>
-			  <option value="tl_ph">Filipino</option>
+			  <option value="en_us" {{ lang_selected_us }}>English</option>
+			  <option value="tl_ph" {{ lang_selected_tl }}>Filipino</option>
 			</select>
 			<button type="button" class="btn btn-danger" style="float: right;display: inline-block" onclick="javascript:eraseText();">Clear</button>
 			<button type="submit" class="btn btn-success" style="float: right; margin-right:5px;display: inline-block">Decrypt</button>
@@ -73,15 +73,15 @@
     <hr>
 
     <!-- Call to Action Section -->
-    <div class="row mb-4">
-      <div class="col-lg-6">
+    <div class="row justify-content-start mb-4">
+      <div style="margin-left:25px;" class="col-lg-12">
 			<div class="form-group">
 				<p style="margin-top:0px;margin-bottom:0px"><b>Key</b>: {{key}}</p>
 				<p style="margin-top:0px"><b>Reference Word</b>: <u>{{ refWord }}</u></p>
 				<label for="inputMsg"><b>Output Message</b>:</label>
 				<textarea  style="margin-bottom:0px"class="form-control" id="outMsg" rows="3">{{outMsg}}</textarea>
 			</div>
-				<button style="float: right; margin-right:5px" class="btn btn-primary" onclick="MyWindow=window.open('/solnspace','MyWindow','width=auto,height=auto'); return false;">View Solution Space</button>
+				<button style="float: right; margin-right:5px" class="btn btn-primary" onclick="MyWindow=window.open('/solnspace/key/{{key}}','MyWindow','width=auto,height=auto'); return false;">View Solution Space</button>
       </div>
     </div>
 
@@ -103,3 +103,4 @@
 </body>
 
 </html>
+

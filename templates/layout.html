@@ -10,7 +10,7 @@
 		}
 
 		td, th {
-		  border: 1px solid #dddddd;
+		  border: 1.5px solid #218838;
 		  text-align: left;
 		  padding: 8px;
 		}
@@ -37,8 +37,13 @@
 
 {% for i in range(25) %}
 	<tr>
+	{% if (i+1) != key %}
     <td>{{ i+1 }} </td>
  	<td>{{ soln[i+1] }}</td>
+	{% else %}
+	<td style="background-color:#218838;color:white;">{{ i+1 }} </td>
+ 	<td style="background-color:#218838;color:white;">{{ soln[i+1] }}</td>
+	{% endif %}
 	</tr>
 {% endfor %}
 	<tr>
